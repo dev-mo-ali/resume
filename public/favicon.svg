@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mohammad Ali">
+  <defs>
+    <linearGradient id="mark" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#134e4a" />
+      <stop offset="0.56" stop-color="#0e7490" />
+      <stop offset="1" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#18181b" />
+  <rect x="5" y="5" width="54" height="54" rx="12" fill="url(#mark)" />
+  <path d="M16 43V21h5.8l7.1 11.7L36 21h5.8v22h-5.2V29.4l-6 9.8h-3.4l-6-9.8V43H16Z" fill="#ffffff" />
+  <path d="M46.4 43 39 21h5.8l4.4 14.6L53.7 21h5.5L51.8 43h-5.4Z" fill="#fef3c7" opacity="0.95" />
+</svg>
