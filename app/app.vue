@@ -160,15 +160,15 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
 </script>
 
 <template>
-  <main class="min-h-screen bg-stone-50 text-zinc-900">
-    <section class="border-b border-zinc-200 bg-white">
+  <main class="resume-surface min-h-screen text-zinc-900">
+    <section class="hero-panel border-b border-white/70">
       <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[1.4fr_0.9fr] lg:py-14">
-        <div class="flex flex-col justify-between gap-8">
+        <div class="animate-rise flex flex-col justify-between gap-8">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
+            <p class="eyebrow">
               DevOps - Cloud Architecture - Infrastructure as Code
             </p>
-            <h1 class="mt-4 text-4xl font-semibold tracking-normal text-zinc-950 sm:text-6xl">
+            <h1 class="name-gradient mt-4 text-4xl font-semibold tracking-normal sm:text-6xl">
               {{ profile.name }}
             </h1>
             <p class="mt-4 max-w-3xl text-xl font-medium text-zinc-700">
@@ -181,13 +181,13 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
 
           <div class="flex flex-wrap gap-3">
             <a
-              class="inline-flex min-h-11 items-center rounded-lg bg-zinc-950 px-5 text-sm font-semibold text-white transition hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
+              class="btn-primary"
               :href="`mailto:${profile.email}`"
             >
               Email Mohammad
             </a>
             <a
-              class="inline-flex min-h-11 items-center rounded-lg border border-zinc-300 bg-white px-5 text-sm font-semibold text-zinc-900 transition hover:border-teal-700 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
+              class="btn-secondary"
               :href="pdfUrl"
               download
             >
@@ -196,9 +196,9 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
           </div>
         </div>
 
-        <aside class="border-l-4 border-teal-700 bg-zinc-950 p-6 text-white shadow-sm">
+        <aside class="profile-card animate-rise-delay p-6 text-white">
           <div class="grid grid-cols-2 gap-4">
-            <div v-for="item in stats" :key="item.label" class="border-b border-white/15 pb-4">
+            <div v-for="item in stats" :key="item.label" class="stat-tile">
               <p class="text-3xl font-semibold text-amber-300">{{ item.value }}</p>
               <p class="mt-1 text-sm leading-5 text-zinc-300">{{ item.label }}</p>
             </div>
@@ -218,52 +218,52 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
       </div>
     </section>
 
-    <section class="bg-teal-800 text-white">
+    <section class="accent-strip text-white">
       <div class="mx-auto grid max-w-6xl gap-4 px-5 py-5 sm:grid-cols-3 sm:px-8">
-        <p class="text-sm font-semibold">AWS Solutions Architect Professional</p>
-        <p class="text-sm font-semibold">AWS Security Specialty</p>
-        <p class="text-sm font-semibold">HashiCorp Terraform Associate</p>
+        <p class="cert-chip">AWS Solutions Architect Professional</p>
+        <p class="cert-chip">AWS Security Specialty</p>
+        <p class="cert-chip">HashiCorp Terraform Associate</p>
       </div>
     </section>
 
     <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[0.85fr_1.6fr]">
       <aside class="space-y-8 lg:sticky lg:top-6 lg:self-start">
-        <section class="border border-zinc-200 bg-white p-5 shadow-sm">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">Certifications</h2>
+        <section class="resume-card p-5">
+          <h2 class="section-title">Certifications</h2>
           <ul class="mt-4 space-y-2 text-sm leading-6 text-zinc-700">
-            <li v-for="certification in certifications" :key="certification" class="flex gap-2">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+            <li v-for="certification in certifications" :key="certification" class="hover-list-item flex gap-2">
+              <span class="bullet-dot" />
               <span>{{ certification }}</span>
             </li>
           </ul>
         </section>
 
-        <section class="border border-zinc-200 bg-white p-5 shadow-sm">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">Technical Skills</h2>
+        <section class="resume-card p-5">
+          <h2 class="section-title">Technical Skills</h2>
           <div class="mt-4 space-y-4">
-            <div v-for="group in skillGroups" :key="group.name">
+            <div v-for="group in skillGroups" :key="group.name" class="skill-block">
               <h3 class="text-sm font-semibold text-zinc-950">{{ group.name }}</h3>
               <p class="mt-1 text-sm leading-6 text-zinc-700">{{ group.items }}</p>
             </div>
           </div>
         </section>
 
-        <section class="border border-zinc-200 bg-white p-5 shadow-sm">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">Languages</h2>
-          <ul class="mt-4 space-y-2 text-sm leading-6 text-zinc-700">
-            <li v-for="language in languages" :key="language">{{ language }}</li>
+        <section class="resume-card p-5">
+          <h2 class="section-title">Languages</h2>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm leading-6 text-zinc-700">
+            <li v-for="language in languages" :key="language" class="language-pill">{{ language }}</li>
           </ul>
         </section>
       </aside>
 
       <div class="space-y-8">
-        <section class="border border-zinc-200 bg-white p-6 shadow-sm">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">Key Achievements</h2>
+        <section class="resume-card p-6">
+          <h2 class="section-title">Key Achievements</h2>
           <div class="mt-5 grid gap-4 sm:grid-cols-2">
             <article
               v-for="achievement in achievements"
               :key="achievement"
-              class="border-l-4 border-amber-400 bg-stone-50 p-4"
+              class="achievement-card p-4"
             >
               <p class="text-sm leading-6 text-zinc-700">{{ achievement }}</p>
             </article>
@@ -271,13 +271,13 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
         </section>
 
         <section class="space-y-4">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">
+          <h2 class="section-title">
             Professional Experience
           </h2>
           <article
             v-for="experience in experiences"
             :key="`${experience.company}-${experience.dates}`"
-            class="border border-zinc-200 bg-white p-6 shadow-sm"
+            class="experience-card p-6"
           >
             <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
@@ -290,7 +290,7 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
             </div>
             <ul class="mt-5 space-y-3 text-sm leading-6 text-zinc-700">
               <li v-for="point in experience.points" :key="point" class="flex gap-3">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+                <span class="bullet-dot mt-2" />
                 <span>{{ point }}</span>
               </li>
             </ul>
@@ -298,10 +298,10 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
         </section>
 
         <section class="grid gap-6 md:grid-cols-2">
-          <div class="border border-zinc-200 bg-white p-6 shadow-sm">
-            <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">Education</h2>
+          <div class="resume-card p-6">
+            <h2 class="section-title">Education</h2>
             <div class="mt-5 space-y-5">
-              <div v-for="item in education" :key="item.degree">
+              <div v-for="item in education" :key="item.degree" class="education-item">
                 <div class="flex items-start justify-between gap-4">
                   <h3 class="text-base font-semibold text-zinc-950">{{ item.degree }}</h3>
                   <p class="text-sm font-semibold text-zinc-600">{{ item.dates }}</p>
@@ -311,25 +311,25 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
             </div>
           </div>
 
-          <div class="border border-zinc-200 bg-white p-6 shadow-sm">
-            <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">
+          <div class="resume-card p-6">
+            <h2 class="section-title">
               Professional Development
             </h2>
             <ul class="mt-5 space-y-2 text-sm leading-6 text-zinc-700">
-              <li v-for="item in professionalDevelopment" :key="item" class="flex gap-2">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+              <li v-for="item in professionalDevelopment" :key="item" class="hover-list-item flex gap-2">
+                <span class="bullet-dot bullet-dot-warm" />
                 <span>{{ item }}</span>
               </li>
             </ul>
           </div>
         </section>
 
-        <section class="border border-zinc-200 bg-white p-6 shadow-sm">
-          <h2 class="text-sm font-bold uppercase tracking-[0.14em] text-zinc-950">
+        <section class="resume-card p-6">
+          <h2 class="section-title">
             Development Background
           </h2>
           <div class="mt-5 grid gap-4 sm:grid-cols-3">
-            <div v-for="item in development" :key="item.name">
+            <div v-for="item in development" :key="item.name" class="skill-block">
               <h3 class="text-sm font-semibold text-zinc-950">{{ item.name }}</h3>
               <p class="mt-1 text-sm leading-6 text-zinc-700">{{ item.items }}</p>
             </div>
