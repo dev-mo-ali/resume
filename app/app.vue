@@ -6,8 +6,10 @@ const profile = {
   phone: "+601153816737",
   email: "alhaj.mhmd@gmail.com",
   linkedin: "LinkedIn profile available on request",
-  pdf: "/Mohammad_Ali_Resume.pdf",
 };
+
+const baseURL = useRuntimeConfig().app.baseURL.replace(/\/$/, "");
+const pdfUrl = `${baseURL}/Mohammad_Ali_Resume.pdf`;
 
 const stats = [
   { value: "6+", label: "years in DevOps and AWS" },
@@ -186,7 +188,7 @@ const languages = ["English - Professional", "Arabic - Native", "Mandarin Chines
             </a>
             <a
               class="inline-flex min-h-11 items-center rounded-lg border border-zinc-300 bg-white px-5 text-sm font-semibold text-zinc-900 transition hover:border-teal-700 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2"
-              :href="profile.pdf"
+              :href="pdfUrl"
               download
             >
               Download PDF

@@ -25,8 +25,10 @@ export default defineNuxtConfig({
           content:
             "AWS Cloud Architect, DevOps Engineer, Terraform, Kubernetes, EKS, CI/CD, observability, and cloud security.",
         },
+        { property: "og:url", content: "https://dev-mo-ali.github.io/resume/" },
         { property: "og:type", content: "website" },
       ],
+      link: [{ rel: "canonical", href: "https://dev-mo-ali.github.io/resume/" }],
     },
   },
   vite: {
